@@ -1,0 +1,151 @@
+/*Pokemon Colors:
+Red - #fc1c00
+Yellow - #fccf00
+Blue - #2468b1
+Dark Blue - #1e2d59*/
+
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+body {
+  height: 100vh;
+  background: #fc1c00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Bangers', cursive;
+}
+
+.container {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+#myHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  margin: 20px 0;
+  font-size: 3.5em;
+  letter-spacing: 5px;
+  color: #fccf00;
+  text-shadow: -3px -3px 0 #2468b1,
+                3px -3px 0 #2468b1,
+                3px 3px 0 #2468b1,
+                -3px 3px 0 #2468b1,
+                5px 5px 0 #1e2d59;
+}
+
+#content {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcomeMessage {
+  width: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonZone {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#myFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#myFooter h3 {
+  color: #fccf00;
+  text-shadow: 2px 2px 0 #2468b1;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#startButton {
+  padding: 5% 10%;
+  background: #1e2d59;
+  border: 10px solid #fccf00;
+  border-radius: 15px;
+  color: #fccf00;
+  text-shadow: 3px 3px 0 #2468b1;
+  font-size: 2.5em;
+  box-shadow: 3px 3px 0 #2468b1;
+  cursor: pointer;
+}
+
+#startButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 8px #2468b1;
+  transition: 0.3s; 
+}
+
+#startButton:active {
+  transform: translateY(0px);
+  box-shadow: 0px 0px 0 #2468b1;
+  transition: 0.2s; 
+}
+
+.message {
+  color: #fccf00;
+  text-shadow: 3px 3px 0 #2468b1;
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+@media screen and (max-width: 1080px) {
+#logo {
+  font-size: 3em;
+  text-shadow: -1px -1px 0 #2468b1,
+              1px -1px 0 #2468b1,
+              1px 1px 0 #2468b1,
+              -1px 1px 0 #2468b1,
+              3px 3px 0 #1e2d59;
+}
+.message {
+  font-size: 2em;
+  text-shadow: 2px 2px 0 #1e2d59;
+}
+.container {
+  width: 100%;
+}
+#myFooter {
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  #logo {
+    font-size: 1.5em;
+    text-shadow: -1px -1px 0 #2468b1,
+                1px -1px 0 #2468b1,
+                1px 1px 0 #2468b1,
+                -1px 1px 0 #2468b1,
+                3px 3px 0 #1e2d59;
+  }
+  .message {
+    font-size: 1.5em;
+    text-shadow: 2px 2px 0 #1e2d59;
+  }
+  .container {
+    width: 100%;
+  }
+  #myFooter {
+    justify-content: center;
+  }
+
