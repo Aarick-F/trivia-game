@@ -25,8 +25,8 @@ $(document).ready(() => {
   // =========
 
   function init() {
-    $("#content").html(beginning)
-    .hide()
+    $("#content").hide()
+    .html(beginning)
     .fadeIn(1500);
     wrongGuesses = 0;
     game = false;
@@ -59,7 +59,7 @@ $(document).ready(() => {
           }
         }
       }, 1000);
-      
+
       $("#pokemon").on("click", function() {
         clearInterval(timer);
         init();
