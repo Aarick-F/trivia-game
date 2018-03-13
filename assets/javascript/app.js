@@ -9,11 +9,10 @@ $(document).ready(() => {
   const answersField = $("<div id='answersField'></div>")
 
   $("#startButton").on("click", function() {
-    $("#content").html("");
-    $("#content").append(gameInfo);
+    $("#content").html("")
+    .append(gameInfo, answersField);
     $("#gameInfo").append(pokemon, infoDisplay);
     $("#infoDisplay").append(answer, timer, guessesLeft);
-    $("#content").append(answersField);
   });
 
 });
