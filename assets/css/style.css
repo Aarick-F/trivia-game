@@ -105,7 +105,7 @@ body {
   width: 100%;
   flex: 2;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 #pokemon {
@@ -117,6 +117,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#answer {
+  font-size: 4em;
+  color: #fccf00;
+  text-shadow: 2px 2px 0 #2468b1;
+}
+
+#timer {
+  font-size: 4em;
+  color: #fccf00;
+  text-shadow: 2px 2px 0 #2468b1;
 }
 
 .info {
@@ -133,6 +145,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2em;
+  color: #fccf00;
+  text-shadow: 2px 2px 0 #2468b1;
 }
 
 #answersField {
@@ -149,6 +164,16 @@ body {
   font-size: 2.5em;
   text-align: center;
   line-height: 1.5em;
+}
+
+.pokemonPic {
+  width: 90%;
+  filter: contrast(0) brightness(0);
+}
+
+.reveal {
+  filter: contrast(1) brightness(1);
+  transition: 1.5s;
 }
 
 @media screen and (max-width: 1080px) {
