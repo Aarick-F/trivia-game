@@ -33,6 +33,8 @@ $(document).ready(() => {
     round();
   });
 
+
+
   function init() {
     $("#content").html(beginning)
     .hide()
