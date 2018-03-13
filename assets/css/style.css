@@ -101,6 +101,48 @@ body {
   transition: 0.2s; 
 }
 
+#gameInfo {
+  width: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: space-between; 
+}
+
+#pokemon {
+  flex: 1;
+}
+
+#infoDisplay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info {
+  width: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#guessesLeft {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#answersField {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .message {
   color: #fccf00;
   text-shadow: 3px 3px 0 #2468b1;
