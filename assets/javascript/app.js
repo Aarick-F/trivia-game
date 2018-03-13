@@ -24,17 +24,6 @@ $(document).ready(() => {
   init();
   // =========
 
-  $("#startButton").on("click", function() {
-    game = true;
-    $("#content").html("")
-    .append(gameInfo, answersField);
-    $("#gameInfo").append(pokemon, infoDisplay);
-    $("#infoDisplay").append(answer, timer, guessesLeft);
-    round();
-  });
-
-
-
   function init() {
     $("#content").html(beginning)
     .hide()
@@ -43,6 +32,15 @@ $(document).ready(() => {
     game = false;
     score = 0;
     pickedPokemon = [];
+
+    $("#startButton").on("click", function() {
+      game = true;
+      $("#content").html("")
+      .append(gameInfo, answersField);
+      $("#gameInfo").append(pokemon, infoDisplay);
+      $("#infoDisplay").append(answer, timer, guessesLeft);
+      round();
+    });
   }
 
   function round() {
@@ -61,6 +59,11 @@ $(document).ready(() => {
           }
         }
       }, 1000);
+      
+      $("#pokemon").on("click", function() {
+        clearInterval(timer);
+        init();
+      });
     }
   }
 
