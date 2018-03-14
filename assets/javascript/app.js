@@ -7,7 +7,7 @@ $(document).ready(() => {
   const infoDisplay = $("<div id='infoDisplay'></div>");
   const answer = $("<div id='answer' class='info'></div>");
   const timer = $("<div id='timer' class='info'>10</div>");
-  const guessesLeft = $("<div id='guessesLeft'></div>");
+  const guessesLeft = $("<div id='guessesLeft'>Guesses Left: </div>");
   const answersField = $("<div id='answersField'></div>");
   // BEGINNING SCENE
   const beginning = $("#content").html();
@@ -60,7 +60,7 @@ $(document).ready(() => {
           $("#answer").hide().html("It's " + pokemonName).fadeIn(1500);
           $(".pokemonPic").addClass("reveal");
           guesses--;
-          $("#guessesLeft").html(guesses);
+          $("#guessesLeft").html("Guesses Left: " + guesses);
           if(guesses === 0) {
             // GAME OVER SCENE
           } else {
@@ -70,7 +70,7 @@ $(document).ready(() => {
         }
       }, 1000);
       $("#answer").html("?");
-      $("#guessesLeft").html(guesses);
+      $("#guessesLeft").html("Guesses Left: " + guesses);
       $("#pokemon").html(pokemonPicture);
       $(".pokemonPic").hide().fadeIn(2000);
 

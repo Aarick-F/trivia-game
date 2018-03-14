@@ -180,23 +180,24 @@ body {
 }
 
 @media screen and (max-width: 1080px) {
-#logo {
-  font-size: 3em;
-  text-shadow: -1px -1px 0 #2468b1,
-              1px -1px 0 #2468b1,
-              1px 1px 0 #2468b1,
-              -1px 1px 0 #2468b1,
-              3px 3px 0 #1e2d59;
-}
-.message {
-  font-size: 2em;
-  text-shadow: 2px 2px 0 #1e2d59;
-}
-.container {
-  width: 90%;
-}
-#myFooter {
-  justify-content: center;
+  #logo {
+    font-size: 3em;
+    text-shadow: -1px -1px 0 #2468b1,
+                  1px -1px 0 #2468b1,
+                  1px 1px 0 #2468b1,
+                  -1px 1px 0 #2468b1,
+                  3px 3px 0 #1e2d59;
+  }
+  .message {
+    font-size: 2em;
+    text-shadow: 2px 2px 0 #1e2d59;
+  }
+  .container {
+    width: 90%;
+  }
+  #myFooter {
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -218,4 +219,11 @@ body {
   #myFooter {
     justify-content: center;
   }
+  #answer {
+    font-size: 2em;
+  }
+  #infoDisplay {
+    flex-direction: column;
+  }
+}
 
