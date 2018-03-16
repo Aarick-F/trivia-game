@@ -36,9 +36,8 @@ $(document).ready(() => {
   // =========
 
   function init() {
-    $("#content").hide()
-    .html(beginning)
-    .fadeIn(1500);
+    $("#content")
+    .html(beginning);
     guesses = 3;
     game = false;
     score = 0;
@@ -80,6 +79,7 @@ $(document).ready(() => {
           $("#guessesLeft").html("Guesses Left: " + guesses);
           if(guesses === 0) {
             // GAME OVER SCENE
+            game = false;
             $("#guessesLeft").html("Guesses Left: " + guesses);
             $("#content").html("").append(end);
             endMessage.text("Somewhere, Professor Oak is crying. Resetting in 5 seconds.");
@@ -90,7 +90,7 @@ $(document).ready(() => {
               }, 5000);
           } else {
             clearInterval(timer);
-            setTimeout(round, 3000);
+            setTimeout(round, 2000);
             // ROUND RESTART
           }
         }
@@ -100,7 +100,6 @@ $(document).ready(() => {
           wait = false;
           // CORRECT GUESS
           if($(this).text() == pokemonName) {
-            console.log("OH SHIT YOU WIN");
             score++;
             if(score == pokemonList.length) {
               $("#content").html("").append(end);
@@ -110,13 +109,14 @@ $(document).ready(() => {
               setTimeout(function() {
                 location.reload();
               }, 5000);
+            } else {
+              $("#answer").hide().html("It's " + pokemonName).fadeIn(400);
+              $(".pokemonPic").addClass("reveal");
+              clearInterval(timer);
+              seconds = 10;
+              $("#timer").html(seconds);
+              setTimeout(round, 1500);
             }
-            $("#answer").hide().html("It's " + pokemonName).fadeIn(400);
-            $(".pokemonPic").addClass("reveal");
-            clearInterval(timer);
-            seconds = 10;
-            $("#timer").html(seconds);
-            setTimeout(round, 1500);
           } else {
             guesses--;
             if(guesses == 0) {
