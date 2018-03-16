@@ -66,14 +66,14 @@ $(document).ready(() => {
       $("#answer").html("?");
       $("#guessesLeft").html("Guesses Left: " + guesses);
       $("#pokemon").html(pokemonPicture);
-      $(".pokemonPic").hide().fadeIn(2000);
+      $(".pokemonPic").hide().fadeIn(1000);
       const timer = setInterval(function() {
         seconds--;
         $("#timer").html(seconds);
         console.log(seconds);
         if(seconds === 0) {
           clearInterval(timer);
-          $("#answer").hide().html("Time's Up!").fadeIn(1500);
+          $("#answer").hide().html("Time's Up!").fadeIn(1200);
           guesses--;
           seconds = 10;
           $("#timer").html(seconds);
@@ -116,7 +116,7 @@ $(document).ready(() => {
             clearInterval(timer);
             seconds = 10;
             $("#timer").html(seconds);
-            setTimeout(round, 3000);
+            setTimeout(round, 1500);
           } else {
             guesses--;
             if(guesses == 0) {
