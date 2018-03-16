@@ -101,7 +101,7 @@ $(document).ready(() => {
           // CORRECT GUESS
           if($(this).text() == pokemonName) {
             score++;
-            if(score == pokemonList.length) {
+            if(score == pokemonList.length - (3 - guesses)) {
               $("#content").html("").append(end);
               endMessage.text("You are a true Pokemon Master! Resetting in 5 seconds.");
               scoreDisplay.text("Score: " + score);
