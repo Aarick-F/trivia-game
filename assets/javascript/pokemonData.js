@@ -204,4 +204,204 @@
       name: "Dugtrio",
       image: "<img class='pokemonPic' src='assets/images/051.png'>"
     },
+    {
+      name: "Meowth",
+      image: "<img class='pokemonPic' src='assets/images/052.png'>"
+    },
+    {
+      name: "Persian",
+      image: "<img class='pokemonPic' src='assets/images/053.png'>"
+    },
+    {
+      name: "Psyduck",
+      image: "<img class='pokemonPic' src='assets/images/054.png'>"
+    },
+    {
+      name: "Golduck",
+      image: "<img class='pokemonPic' src='assets/images/055.png'>"
+    },
+    {
+      name: "Mankey",
+      image: "<img class='pokemonPic' src='assets/images/056.png'>"
+    },
+    {
+      name: "Primeape",
+      image: "<img class='pokemonPic' src='assets/images/057.png'>"
+    },
+    {
+      name: "Growlithe",
+      image: "<img class='pokemonPic' src='assets/images/058.png'>"
+    },
+    {
+      name: "Arcanine",
+      image: "<img class='pokemonPic' src='assets/images/059.png'>"
+    },
+    {
+      name: "Poliwag",
+      image: "<img class='pokemonPic' src='assets/images/060.png'>"
+    },
+    {
+      name: "Poliwhirl",
+      image: "<img class='pokemonPic' src='assets/images/061.png'>"
+    },
+    {
+      name: "Poliwrath",
+      image: "<img class='pokemonPic' src='assets/images/062.png'>"
+    },
+    {
+      name: "Abra",
+      image: "<img class='pokemonPic' src='assets/images/063.png'>"
+    },
+    {
+      name: "Kadabra",
+      image: "<img class='pokemonPic' src='assets/images/064.png'>"
+    },
+    {
+      name: "Alakazam",
+      image: "<img class='pokemonPic' src='assets/images/065.png'>"
+    },
+    {
+      name: "Machop",
+      image: "<img class='pokemonPic' src='assets/images/066.png'>"
+    },
+    {
+      name: "Machoke",
+      image: "<img class='pokemonPic' src='assets/images/067.png'>"
+    },
+    {
+      name: "Machamp",
+      image: "<img class='pokemonPic' src='assets/images/068.png'>"
+    },
+    {
+      name: "Bellsprout",
+      image: "<img class='pokemonPic' src='assets/images/069.png'>"
+    },
+    {
+      name: "Weepinbell",
+      image: "<img class='pokemonPic' src='assets/images/070.png'>"
+    },
+    {
+      name: "Victreebel",
+      image: "<img class='pokemonPic' src='assets/images/071.png'>"
+    },
+    {
+      name: "Tentacool",
+      image: "<img class='pokemonPic' src='assets/images/072.png'>"
+    },
+    {
+      name: "Tentacruel",
+      image: "<img class='pokemonPic' src='assets/images/073.png'>"
+    },
+    {
+      name: "Geodude",
+      image: "<img class='pokemonPic' src='assets/images/074.png'>"
+    },
+    {
+      name: "Graveler",
+      image: "<img class='pokemonPic' src='assets/images/075.png'>"
+    },
+    {
+      name: "Golem",
+      image: "<img class='pokemonPic' src='assets/images/076.png'>"
+    },
+    {
+      name: "Ponyta",
+      image: "<img class='pokemonPic' src='assets/images/077.png'>"
+    },
+    {
+      name: "Rapidash",
+      image: "<img class='pokemonPic' src='assets/images/078.png'>"
+    },
+    {
+      name: "Slowpoke",
+      image: "<img class='pokemonPic' src='assets/images/079.png'>"
+    },
+    {
+      name: "Slowbro",
+      image: "<img class='pokemonPic' src='assets/images/080.png'>"
+    },
+    {
+      name: "Magnemite",
+      image: "<img class='pokemonPic' src='assets/images/081.png'>"
+    },
+    {
+      name: "Magneton",
+      image: "<img class='pokemonPic' src='assets/images/082.png'>"
+    },
+    {
+      name: "Farfetch'd",
+      image: "<img class='pokemonPic' src='assets/images/083.png'>"
+    },
+    {
+      name: "Doduo",
+      image: "<img class='pokemonPic' src='assets/images/084.png'>"
+    },
+    {
+      name: "Dodrio",
+      image: "<img class='pokemonPic' src='assets/images/085.png'>"
+    },
+    {
+      name: "Seel",
+      image: "<img class='pokemonPic' src='assets/images/086.png'>"
+    },
+    {
+      name: "Dewgong",
+      image: "<img class='pokemonPic' src='assets/images/087.png'>"
+    },
+    {
+      name: "Grimer",
+      image: "<img class='pokemonPic' src='assets/images/088.png'>"
+    },
+    {
+      name: "Muk",
+      image: "<img class='pokemonPic' src='assets/images/089.png'>"
+    },
+    {
+      name: "Shellder",
+      image: "<img class='pokemonPic' src='assets/images/090.png'>"
+    },
+    {
+      name: "Cloyster",
+      image: "<img class='pokemonPic' src='assets/images/091.png'>"
+    },
+    {
+      name: "Gastly",
+      image: "<img class='pokemonPic' src='assets/images/092.png'>"
+    },
+    {
+      name: "Haunter",
+      image: "<img class='pokemonPic' src='assets/images/093.png'>"
+    },
+    {
+      name: "Gengar",
+      image: "<img class='pokemonPic' src='assets/images/094.png'>"
+    },
+    {
+      name: "Onix",
+      image: "<img class='pokemonPic' src='assets/images/095.png'>"
+    },
+    {
+      name: "Drowzee",
+      image: "<img class='pokemonPic' src='assets/images/096.png'>"
+    },
+    {
+      name: "Hypno",
+      image: "<img class='pokemonPic' src='assets/images/097.png'>"
+    },
+    {
+      name: "Krabby",
+      image: "<img class='pokemonPic' src='assets/images/098.png'>"
+    },
+    {
+      name: "Kingler",
+      image: "<img class='pokemonPic' src='assets/images/099.png'>"
+    },
+    {
+      name: "Voltorb",
+      image: "<img class='pokemonPic' src='assets/images/100.png'>"
+    },
+    {
+      name: "Electrode",
+      image: "<img class='pokemonPic' src='assets/images/101.png'>"
+    },
   ];
