@@ -25,14 +25,14 @@ $(document).ready(() => {
       pickedPokemon,
       pokemonPicture,
       pokemonName,
-      wait;
-
+      wait,
+      time;
   let wrongAnswers = [];
 
 
   // APP START
   // =========
-  init();
+  init(); ////
   // =========
 
   function init() {
@@ -44,15 +44,6 @@ $(document).ready(() => {
     pokemonName = undefined;
     pokemonPicture = undefined;
     pickedPokemon = [];
-
-    $("#startButton").on("click", function() {
-      game = true;
-      $("#content").html("")
-      .append(gameInfo, answersField);
-      $("#gameInfo").append(pokemon, infoDisplay);
-      $("#infoDisplay").append(answer, timer, guessesLeft);
-      round();
-    });
   }
 
   function round() {
@@ -60,89 +51,122 @@ $(document).ready(() => {
       wrongAnswers = [];
       answersField.html("");
       wait = true;
-      getPokemon();
       seconds = 10;
-      $("#answer").html("?");
-      $("#guessesLeft").html("Guesses Left: " + guesses);
-      $("#pokemon").html(pokemonPicture);
-      $(".pokemonPic").hide().fadeIn(1000);
-      const timer = setInterval(function() {
-        seconds--;
-        $("#timer").html(seconds);
-        console.log(seconds);
-        if(seconds === 0) {
-          clearInterval(timer);
-          $("#answer").hide().html("Time's Up!").fadeIn(1200);
-          guesses--;
-          seconds = 10;
-          $("#timer").html(seconds);
-          $("#guessesLeft").html("Guesses Left: " + guesses);
-          if(guesses === 0) {
-            // GAME OVER SCENE
-            game = false;
-            $("#guessesLeft").html("Guesses Left: " + guesses);
-            $("#content").html("").append(end);
-            endMessage.text("Somewhere, Professor Oak is crying. Resetting in 5 seconds.");
-            scoreDisplay.text("Score: " + score);
-            end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
-            setTimeout(function() {
-                location.reload();
-              }, 5000);
-          } else {
-            clearInterval(timer);
-            setTimeout(round, 2000);
-            // ROUND RESTART
-          }
-        }
-      }, 1000);
-      $(".options").on("click", function() {
-        if(wait && guesses > 0) {
-          wait = false;
-          // CORRECT GUESS
-          if($(this).text() == pokemonName) {
-            score++;
-            if(score == pokemonList.length - (3 - guesses)) {
-              $("#content").html("").append(end);
-              endMessage.text("You are a true Pokemon Master! Resetting in 5 seconds.");
-              scoreDisplay.text("Score: " + score);
-              end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
-              setTimeout(function() {
-                location.reload();
-              }, 5000);
-            } else {
-              $("#answer").hide().html("It's " + pokemonName).fadeIn(400);
-              $(".pokemonPic").addClass("reveal");
-              clearInterval(timer);
-              seconds = 10;
-              $("#timer").html(seconds);
-              setTimeout(round, 1500);
-            }
-          } else {
-            guesses--;
-            if(guesses == 0) {
-              $("#guessesLeft").html("Guesses Left: " + guesses);
-              $("#content").html("").append(end);
-              endMessage.text("Somewhere, Professor Oak is crying. Stick around to restart.");
-              scoreDisplay.text("Score: " + score);
-              end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
-              setTimeout(function() {
-                location.reload();
-              }, 5000);
-            } else {
-              seconds = 10;
-              $("#answer").hide().html("Incorrect!").fadeIn(400);
-              $("#timer").html(seconds);
-              $("#guessesLeft").html("Guesses Left: " + guesses);
-              clearInterval(timer);
-              setTimeout(round, 1000);
-            }
-          }
-        }
-      });
+      time = setInterval(timeKeeper, 1000);
+      let compare = pokemonList.length - (3 - guesses);
+      console.log("COMPARE: " + compare);
+      if(score < compare) {
+        getPokemon();
+      } else if(score === compare) {
+        // GAME WIN
+        stopTimer();
+        $("#content").html("").append(end);
+        endMessage.text("You are a true Pokemon Master! Resetting in 5 seconds.");
+        scoreDisplay.text("Score: " + score);
+        end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
+        setTimeout(function() {
+          location.reload();
+        }, 5000);
+      } else if(guesses === 0) {
+        // GAME LOSE
+        stopTimer();
+        $("#guessesLeft").html("Guesses Left: " + guesses);
+        $("#content").html("").append(end);
+        endMessage.text("Somewhere, Professor Oak is crying. Stick around to restart.");
+        scoreDisplay.text("Score: " + score);
+        end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
+        setTimeout(function() {
+          location.reload();
+        }, 5000);
+      }
     }
   }
 
+  $(document).on("click", "#startButton", function() {
+      game = true;
+      $("#content").html("")
+      .append(gameInfo, answersField);
+      $("#gameInfo").append(pokemon, infoDisplay);
+      $("#infoDisplay").append(answer, timer, guessesLeft);
+      round();
+    });
+
+  $(document).on("click", ".options", function() {
+    console.log(pokemonList.length);
+    if(wait && guesses > 0) {
+      stopTimer();
+      wait = false;
+      if($(this).text() == pokemonName) {
+        // CORRECT GUESS
+        score++;
+        console.log("SCORE: " + score);
+        $("#answer").hide().html("It's " + pokemonName).fadeIn(400);
+        $(".pokemonPic").addClass("reveal");
+        seconds = 10;
+        $("#timer").html(seconds);
+        setTimeout(round, 1500);
+      } else {
+        // INCORRECT GUESS
+        guesses--;
+        if(guesses == 0) {
+          // LOSE GAME
+          stopTimer();
+          $("#guessesLeft").html("Guesses Left: " + guesses);
+          $("#content").html("").append(end);
+          endMessage.text("Somewhere, Professor Oak is crying. Stick around to restart.");
+          scoreDisplay.text("Score: " + score);
+          end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
+          setTimeout(function() {
+            location.reload();
+          }, 5000);
+        } else {
+          // LOSE ROUND
+          seconds = 10;
+          $("#answer").hide().html("Incorrect!").fadeIn(400);
+          $("#timer").html(seconds);
+          $("#guessesLeft").html("Guesses Left: " + guesses);
+          stopTimer();
+          setTimeout(round, 1000);
+        }
+      }
+    }
+  });
+
+
+  function timeKeeper() {
+    seconds--;
+    $("#timer").html(seconds);
+    if(seconds === 0) {
+      stopTimer();
+      $("#answer").hide().html("Time's Up!").fadeIn(1200);
+      guesses--;
+      seconds = 10;
+      $("#timer").html(seconds);
+      $("#guessesLeft").html("Guesses Left: " + guesses);
+      if(guesses === 0) {
+        // GAME OVER SCENE
+        game = false;
+        $("#guessesLeft").html("Guesses Left: " + guesses);
+        $("#content").html("").append(end);
+        endMessage.text("Somewhere, Professor Oak is crying. Resetting in 5 seconds.");
+        scoreDisplay.text("Score: " + score);
+        end.append(endMessage, scoreDisplay).hide().fadeIn(1000);
+        setTimeout(function() {
+          location.reload();
+        }, 5000);
+      } else {
+        stopTimer();
+        setTimeout(round, 2000);
+      }
+    }
+  }
+
+  function stopTimer() {
+    clearInterval(time);
+  }
+
   function getPokemon() {
+    console.log("getPokemon Called");
     pokemonName = undefined;
     pokemonPicture = undefined;
     while(pokemonName == undefined) {
@@ -153,6 +177,10 @@ $(document).ready(() => {
         pokemonName = pokemonList[picker].name;
       }
     }
+    $("#answer").html("?");
+    $("#guessesLeft").html("Guesses Left: " + guesses);
+    $("#pokemon").html(pokemonPicture);
+    $(".pokemonPic").hide().fadeIn(1000);
     for(let i = 0; i < 3; i++) {
       while(wrongAnswers.length < 3) {
         let picker = Math.floor(Math.random() * pokemonList.length);
