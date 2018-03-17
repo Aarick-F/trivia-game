@@ -132,7 +132,6 @@ $(document).ready(() => {
     }
   });
 
-
   function timeKeeper() {
     seconds--;
     $("#timer").html(seconds);
@@ -170,6 +169,7 @@ $(document).ready(() => {
     pokemonName = undefined;
     pokemonPicture = undefined;
     while(pokemonName == undefined) {
+      console.log("STUCK IN LOOP?");
       let picker = Math.floor(Math.random() * pokemonList.length);
       if(pickedPokemon.indexOf(pokemonList[picker].name) == -1) {
         pickedPokemon.push(pokemonList[picker].name);
