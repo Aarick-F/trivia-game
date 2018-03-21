@@ -441,7 +441,7 @@
       image: "<img class='pokemonPic' src='assets/images/110.png'>"
     },
     {
-      name: "Ryhorn",
+      name: "Rhyhorn",
       image: "<img class='pokemonPic' src='assets/images/111.png'>"
     },
     {
@@ -593,7 +593,7 @@
       image: "<img class='pokemonPic' src='assets/images/148.png'>"
     },
     {
-      name: "Drgaonite",
+      name: "Dragonite",
       image: "<img class='pokemonPic' src='assets/images/149.png'>"
     },
     {
